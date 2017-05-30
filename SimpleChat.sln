@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleChat.Data", "SimpleChat.Data\SimpleChat.Data.csproj", "{B1DB0759-DC09-4D80-9587-A446DB2BA1F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleChat.Web", "SimpleChat.Web\SimpleChat.Web.csproj", "{27E672A7-0BFC-4E7F-850C-500C056D0F24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleChat.Web.Tests", "SimpleChat.Web.Tests\SimpleChat.Web.Tests.csproj", "{ED76AAB3-2CB8-496C-A52B-DD3710F9FC18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1DB0759-DC09-4D80-9587-A446DB2BA1F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1DB0759-DC09-4D80-9587-A446DB2BA1F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1DB0759-DC09-4D80-9587-A446DB2BA1F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1DB0759-DC09-4D80-9587-A446DB2BA1F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E672A7-0BFC-4E7F-850C-500C056D0F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E672A7-0BFC-4E7F-850C-500C056D0F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E672A7-0BFC-4E7F-850C-500C056D0F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E672A7-0BFC-4E7F-850C-500C056D0F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED76AAB3-2CB8-496C-A52B-DD3710F9FC18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED76AAB3-2CB8-496C-A52B-DD3710F9FC18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED76AAB3-2CB8-496C-A52B-DD3710F9FC18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED76AAB3-2CB8-496C-A52B-DD3710F9FC18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
