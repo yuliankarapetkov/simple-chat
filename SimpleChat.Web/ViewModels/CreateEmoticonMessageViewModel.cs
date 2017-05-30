@@ -8,7 +8,7 @@ namespace SimpleChat.Web.ViewModels
     public class CreateEmoticonMessageViewModel
     {
         [Required]
-        [StringLength(9)]
+        [StringLength(10, MinimumLength = 2)]
         public string Payload { get; set; }
 
         public Message ToEntity()
