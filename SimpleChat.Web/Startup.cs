@@ -43,7 +43,18 @@ namespace SimpleChat.Web
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "Messages",           
+                    template: "messages/{type}",
+                    defaults: new
+                    {
+                        controller = "Messages",
+                        action = "Send"
+                    } 
+                );
+            });
         }
     }
 }

@@ -6,7 +6,7 @@ using SimpleChat.Data;
 namespace SimpleChat.Web.Controllers
 {
     [Produces("application/json")]
-    [Route("api/messages")]
+    //[Route("api/messages")]
     public class MessagesController : Controller
     {
         private IRepository _repository;
@@ -16,15 +16,33 @@ namespace SimpleChat.Web.Controllers
             _repository = repository;
         }
 
-        [HttpGet]
-        [Route("get")]
+        [HttpPost]
+        public IActionResult Send(string type, [FromBody] CreateMessageViewModel message)
+        {
+            switch (type)
+            {
+                case "send_text":
+                    var textModel = new CreateTextMessageViewModel() { Payload = message.Payload };
+                    this.ValidateViewModel(textModel);
+                    return SendText(textModel);
+                case "send_emoticon":
+                    var emoticonModel = new CreateEmoticonMessageViewModel() { Payload = message.Payload };
+                    this.ValidateViewModel(emoticonModel);
+                    return SendEmoticon(emoticonModel);
+                default:
+                    return StatusCode(404);
+            }
+        }
+
+        //[HttpGet]
+        //[Route("get")]
         public IActionResult Get()
         {
             return StatusCode(200, _repository.GetAll());
         }
 
-        [HttpPost]
-        [Route("send-text")]
+        //[HttpPost]
+        //[Route("send-text")]
         public IActionResult SendText([FromBody]CreateTextMessageViewModel message)
         {
             if (!ModelState.IsValid)
@@ -40,8 +58,8 @@ namespace SimpleChat.Web.Controllers
             return StatusCode(201);
         }
 
-        [HttpPost]
-        [Route("send-emoticon")]
+        //[HttpPost]
+        //[Route("send-emoticon")]
         public IActionResult SendEmoticon([FromBody]CreateEmoticonMessageViewModel message)
         {
             if (!ModelState.IsValid)

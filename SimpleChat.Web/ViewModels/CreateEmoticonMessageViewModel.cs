@@ -9,7 +9,7 @@ namespace SimpleChat.Web.ViewModels
     {
         [Required]
         [StringLength(10, MinimumLength = 2)]
-        [RegularExpression("^\D*$")]
+        [RegularExpression(@"^\D*$")]
         public string Payload { get; set; }
 
         public Message ToEntity()
