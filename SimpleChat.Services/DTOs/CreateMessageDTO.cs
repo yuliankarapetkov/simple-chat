@@ -3,20 +3,18 @@ using System.ComponentModel.DataAnnotations;
 
 using SimpleChat.Data;
 
-namespace SimpleChat.Web.ViewModels
+namespace SimpleChat.Services.DTOs
 {
-    public class CreateTextMessageViewModel
+    public class CreateMessageDTO
     {
         [Required]
-        [StringLength(160, MinimumLength = 1)]
-        public string Payload { get; set; }
+        public virtual string Payload { get; set; }
 
-        public Message ToEntity()
+        public virtual Message ToEntity()
         {
             var messageEntity = new Message();
 
             messageEntity.Payload = this.Payload;
-            messageEntity.Type = MessageType.Text;
             messageEntity.CreatedAt = DateTime.UtcNow;
 
             return messageEntity;

@@ -10,7 +10,7 @@ namespace SimpleChat.Web
     public static class Helpers
     {
         public static void ValidateViewModel<TViewModel, TController>(this TController controller, TViewModel viewModelToValidate)
-where TController : Controller
+            where TController : Controller
         {
             var validationContext = new ValidationContext(viewModelToValidate, null, null);
             var validationResults = new List<ValidationResult>();

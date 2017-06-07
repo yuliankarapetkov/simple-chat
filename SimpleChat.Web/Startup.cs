@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using SimpleChat.Data;
+using SimpleChat.Services;
+using SimpleChat.Web.Infrastructure;
 
 namespace SimpleChat.Web
 {
@@ -35,6 +37,9 @@ namespace SimpleChat.Web
             var connection = @"Server=(localdb)\mssqllocaldb;Database=SimpleChat.Data;Trusted_Connection=True;";
             services.AddDbContext<SimpleChatContext>(options => options.UseSqlServer(connection));
             services.AddScoped<IRepository, DbMessagesRepository>();
+
+            services.AddScoped<IMessageTypeResolver, MessageTypeResolver>();
+            services.AddScoped<IMessagesService, MessagesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
